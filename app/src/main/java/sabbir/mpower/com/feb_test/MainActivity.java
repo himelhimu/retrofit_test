@@ -6,8 +6,11 @@ import sabbir.mpower.com.feb_test.interfaces.MyInterface;
 import sabbir.mpower.com.feb_test.model.UserData;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.textView7) TextView tvE;
     @BindView(R.id.textView8) TextView tvF;
 
+    @BindView(R.id.imageView)
+    ImageView imageView;
+
     private static final String URL="https://api.github.com";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 tvA.setText(userData.getName());
                 tvB.setText(userData.getCompany());
                 tvC.setText(userData.getCreatedAt());
+                Picasso.with(MainActivity.this).load(userData.getAvatarUrl()).into(imageView);
             }
 
             @Override
