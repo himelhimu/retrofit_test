@@ -1,11 +1,13 @@
 package sabbir.mpower.com.feb_test;
 
+import android.content.Intent;
 import android.mpower.com.feb_test.R;
 
 import sabbir.mpower.com.feb_test.interfaces.MyInterface;
 import sabbir.mpower.com.feb_test.model.UserData;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,5 +59,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,errorMsg,Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void gotoStackOverFlow(View view){
+        Intent intent=new Intent(this,StackOverFlow.class);
+        startActivity(intent);
     }
 }

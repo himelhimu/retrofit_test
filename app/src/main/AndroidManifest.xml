@@ -15,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="sabbir.mpower.com.feb_test.StackOverFlow">
+
+        </activity>
     </application>
 
 </manifest>
