@@ -62,7 +62,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoStackOverFlow(View view){
-        Intent intent=new Intent(this,StackOverFlow.class);
-        startActivity(intent);
+        switch (view.getId()){
+            case R.id.button:
+                Intent intent=new Intent(this,StackOverFlow.class);
+                startActivity(intent);
+                break;
+            case R.id.button2:
+                Intent intent2=new Intent(this,VolleyTest.class);
+                startActivity(intent2);
+                break;
+        }
+
     }
 }
