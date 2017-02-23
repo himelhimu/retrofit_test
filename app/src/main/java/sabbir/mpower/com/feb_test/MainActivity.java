@@ -8,6 +8,7 @@ import sabbir.mpower.com.feb_test.model.UserData;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.imageView)
     ImageView imageView;
+
+    @BindView(R.id.button3)
+    Button btnMovie;
 
     private static final String URL="https://api.github.com";
     @Override
@@ -70,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button2:
                 Intent intent2=new Intent(this,VolleyTest.class);
                 startActivity(intent2);
+                break;
+            case R.id.button3:
+                Intent intent1=new Intent(this,MovieViewActivity.class);
+                startActivity(intent1);
                 break;
         }
 
