@@ -1,0 +1,72 @@
+package sabbir.mpower.com.feb_test.adapters;
+
+import android.app.Activity;
+import android.content.Context;
+import android.mpower.com.feb_test.R;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import sabbir.mpower.com.feb_test.NasaMainActivity;
+import sabbir.mpower.com.feb_test.model.PhotoDetails;
+
+/**
+ * Created by sabbir on 2/25/17.
+ */
+
+public class NasaPhotoDetailsAdapter extends RecyclerView.Adapter<NasaPhotoDetailsAdapter.MyViewHolder>{
+
+    private Context mContext=null;
+    private ArrayList<PhotoDetails> photoList;
+   public NasaPhotoDetailsAdapter(Context context,ArrayList<PhotoDetails> list){
+        this.mContext=context;
+        this.photoList=list;
+    }
+
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.items,parent,false);
+        return new MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+       //Picasso.with(mContext).load(photoList.get(position).getUrl()).into(holder.imageView);
+        holder.tvDate.setText(photoList.get(position).getDate());
+        holder.tvDetails.setText(photoList.get(position).getExplanation());
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        //@BindView(R.id.image_view)
+        ImageView imageView;
+        //@BindView(R.id.date)
+        TextView tvDate;
+        //@BindView(R.id.tv_details)
+        TextView tvDetails;
+        public MyViewHolder(View v){
+        super(v);
+           // ButterKnife.bind((Activity) mContext);
+        imageView=(ImageView) v.findViewById(R.id.image_view);
+            tvDate=(TextView) v.findViewById(R.id.date);
+            tvDetails=(TextView) v.findViewById(R.id.tv_details);
+
+        }
+
+
+    }
+}

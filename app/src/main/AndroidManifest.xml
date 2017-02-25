@@ -19,7 +19,8 @@
         </activity>
         <activity android:name="sabbir.mpower.com.feb_test.StackOverFlow" />
         <activity android:name="sabbir.mpower.com.feb_test.VolleyTest" />
-        <activity android:name="sabbir.mpower.com.feb_test.MovieViewActivity"></activity>
+        <activity android:name="sabbir.mpower.com.feb_test.MovieViewActivity" />
+        <activity android:name="sabbir.mpower.com.feb_test.NasaMainActivity"></activity>
     </application>
 
 </manifest>

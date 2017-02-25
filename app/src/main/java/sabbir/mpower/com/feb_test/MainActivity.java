@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.mpower.com.feb_test.R;
 
 import sabbir.mpower.com.feb_test.interfaces.MyInterface;
+import sabbir.mpower.com.feb_test.model.Movie;
 import sabbir.mpower.com.feb_test.model.UserData;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,13 +42,19 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.button3)
     Button btnMovie;
+    @BindView(R.id.button_nasa_pic_of_the_day)
+    Button btnNASA;
 
     private static final String URL="https://api.github.com";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+
 
         RestAdapter restAdapter=new RestAdapter.Builder().setEndpoint(URL).build();
         MyInterface myInterface=restAdapter.create(MyInterface.class);
@@ -63,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,errorMsg,Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 
     public void gotoStackOverFlow(View view){
@@ -79,7 +92,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1=new Intent(this,MovieViewActivity.class);
                 startActivity(intent1);
                 break;
+            case R.id.button_nasa_pic_of_the_day:
+                Intent i=new Intent(this,NasaMainActivity.class);
+                startActivity(i);
+                break;
         }
 
     }
+
 }
