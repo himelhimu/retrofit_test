@@ -1,10 +1,12 @@
 package sabbir.mpower.com.feb_test.model;
 
+import java.io.Serializable;
+
 /**
  * Created by sabbir on 2/25/17.
  */
 
-public class PhotoDetails {
+public class PhotoDetails implements Serializable {
     private String date,explanation,title,url;
 
     public PhotoDetails(String date, String explanation, String title, String url) {
