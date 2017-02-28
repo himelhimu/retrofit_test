@@ -74,7 +74,7 @@ public class ImageRequestor {
                         Gson gson=new Gson();
                         PhotoDetails photoDetails=gson.fromJson(response.body().charStream(),PhotoDetails.class);
                         mResponseListener.onReceivedNewPhoto(photoDetails);
-
+                        mLoadingData=false;
 
                     }catch (Exception e){
                         mLoadingData=false;

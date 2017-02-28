@@ -219,7 +219,9 @@ public class NasaMainActivity extends AppCompatActivity implements ImageRequesto
         public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
             super.onScrollStateChanged(recyclerView, newState);
             int toatlItemCount=recyclerView.getLayoutManager().getItemCount();
+            Log.i("INFO","In ScrollListener new photo");
             if (!mImageRequestor.isLoadingData() && toatlItemCount==getLastVisableItemPosition()+1){
+                Log.i("INFO","calling request new photo");
                 requestNewPhoto();
             }
         }
@@ -229,6 +231,7 @@ public class NasaMainActivity extends AppCompatActivity implements ImageRequesto
         try {
             mImageRequestor.getPhoto();
             nasaPhotoDetailsAdapter.notifyDataSetChanged();
+            Log.i("INFO","In request new photo");
         } catch (IOException e) {
             e.printStackTrace();
         }
