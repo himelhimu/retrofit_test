@@ -47,7 +47,7 @@ public class NasaPhotoDetailsAdapter extends RecyclerView.Adapter<NasaPhotoDetai
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.items,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.nasa_item_card_view,parent,false);
         return new MyViewHolder(view);
     }
 
@@ -69,7 +69,7 @@ public class NasaPhotoDetailsAdapter extends RecyclerView.Adapter<NasaPhotoDetai
         Picasso.with(mContext).load(photoList.get(position).getUrl()).into(holder.imageView);
         holder.tvDate.setText(photoList.get(position).getDate());
         holder.tvDetails.setText(photoList.get(position).getExplanation());
-        holder.tvTittle.setText(photoList.get(position).getTitle());
+      //  holder.tvTittle.setText(photoList.get(position).getTitle());
 
     }
 
